@@ -4,7 +4,9 @@ const username = document.getElementById("username");
 const email = document.getElementById("email");
 const mobileno = document.getElementById("mobileno");
 const password = document.getElementById("password");
+const togglePassword = document.querySelector("#togglePassword");
 const cfmpassword = document.getElementById("cfmpassword");
+const gender = document.getElementById("gender");
 
 //add event
 
@@ -19,7 +21,6 @@ const sendData = (usernameVal, sRate, count) => {
         swal("Welcome! "+usernameVal, "Regsitration Successful" , "success");
     }
 }
-
 
 //for final data validation
 const successMsg = (usernameVal) => {
@@ -48,67 +49,104 @@ const isEmail = (emailVal) => {
 
 // Define the validate function
 
-const validate = () => {
+
     const usernameVal = username.value.trim();
     const emailVal = email.value.trim();
     const mobilenoVal = mobileno.value.trim();
     const passwordVal = password.value.trim();
-    const cfmpasswordVal = cfmpassword.value.trim();
-
-    //validate username
-    if(usernameVal === ""){
-        setErrorMsg(username, "username cannot be blank.");
-    }
-    else if(usernameVal.length <= 2){
-        setErrorMsg(username, "minimum 3 characters");
-    }else{
-        setSuccessMsg(username);
-    }
-
-    //validate email
-    if(emailVal === ""){
-        setErrorMsg(email, "email cannot be blank.");
-    }
-    else if(!isEmail(emailVal)){
-        setErrorMsg(emaill, "Not a valid Email.");
-    }else{
-        setSuccessMsg(email);
-    }
-
-    // validate Mobile number
-    if(mobilenoVal === ""){
-        setErrorMsg(mobileno, "Mobile Number cannot be blank.");
-    }
-    else if(mobilenoVal.length < 10){
-        setErrorMsg(mobileno, "Not a valid Mobile no.");
-    }else{
-        setSuccessMsg(mobileno);
-    }
-
-    // validate password
-    if(passwordVal === ""){
-        setErrorMsg(password, "Password cannot be blank.");
-    }
-    else if(passwordVal.length <= 5){
-        setErrorMsg(password, "Minimum 6 characters.");
-    }else if(passwordVal.length >= 15){
-        setErrorMsg(password, "Less than 15 characters.");
-    }else{
-        setSuccessMsg(password);
-    }
-
-    //validate confirm password
-    if(cfmpasswordVal === ""){
-        setErrorMsg(cfmpassword, "Confirm Password cannot be blank.");
-    }
-    else if(passwordVal != cfmpasswordVal){
-        setErrorMsg(cfmpassword, "Password must be same as above.");
-    }else{
-        setSuccessMsg(cfmpassword);
-    }
-
+    const cfmpasswordVal = cfmpassword.value.trim(); 
+    const genderVal = gender.value.trim();
+    
     successMsg(usernameVal);
+
+
+    function usernameValid(event){
+        let usernameVal = event.target.value;
+    
+        //validate username 
+        if(usernameVal === ""){
+            setErrorMsg(username, "username cannot be blank.");
+        }
+        else if(usernameVal.length <= 2){
+            setErrorMsg(username, "minimum 3 characters");
+        }else{
+            setSuccessMsg(username);
+        }
+        
+    }
+    
+    function emailValid(event){
+        let emailVal = event.target.value;
+    
+        //validate email
+        if(emailVal === ""){
+            setErrorMsg(email, "email cannot be blank.");
+        }
+        else if(!isEmail(emailVal)){
+            setErrorMsg(email, "Not a valid Email.");
+        }else{
+            setSuccessMsg(email);
+        }
+    }
+    
+    function mblValid(event){
+        let mobilenoVal = event.target.value;
+    
+        // validate Mobile number
+        if(mobilenoVal === ""){
+            setErrorMsg(mobileno, "Mobile Number cannot be blank.");
+        }
+        else if(mobilenoVal.length < 10){
+            setErrorMsg(mobileno, "Not a valid Mobile no.");
+        }else{
+            setSuccessMsg(mobileno);
+        }
+    }
+    
+    function passValid(event){ 
+        let passwordVal= event.target.value;
+
+        // validate password
+        if(passwordVal === ""){
+            setErrorMsg(password, "Password cannot be blank.");
+        }
+        else if(passwordVal.length <= 5){
+            setErrorMsg(password, "Minimum 6 characters.");
+        }else if(passwordVal.length >= 15){
+            setErrorMsg(password, "Less than 15 characters.");
+        }else{
+            setSuccessMsg(password);
+        }
+    }
+    
+    function cfmpassValid(event){
+        let cfmpasswordVal = event.target.value;
+    
+        //validate confirm password
+        if(cfmpasswordVal === ""){
+            setErrorMsg(cfmpassword, "Confirm Password cannot be blank.");
+        }
+        else if(passwordVal != cfmpasswordVal){
+            setErrorMsg(cfmpassword, "Password must be same as above.");
+        }else{
+            setSuccessMsg(cfmpassword);
+        }
+    }
+
+
+function genderValid(event){
+    if(genderVal ===""){
+        setErrorMsg(gender, "Gender cannot be blank.");
+    }else{
+        setSuccessMsg(gender);
+    }
 }
+
+togglePassword.addEventListener("click", function(e){
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    this.classList.toggle("fa-eye");
+});
 
 function setErrorMsg(input, errormsgs) {
     const formControl = input.parentElement;
@@ -121,7 +159,3 @@ function setSuccessMsg(input) {
     const formControl = input.parentElement;
     formControl.className = "form-control success";
 }
-
-
-
-
