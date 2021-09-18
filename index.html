@@ -22,63 +22,63 @@
         </div>
         <form class="form" id="form" action="">
             <div class="form-control">
-                <label for="">Username</label>
-                <input oninput="usernameValid(event)" type="text" id="username" placeholder="Enter your full name" autocomplete="off">
+                <label for="">Username:</label>
+                <input oninput="usernameValid()" type="text" id="username" placeholder="Enter your full name" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Username cannot be blank.</small>
             </div>
             
-            <div class="form-control">
-                <table>
-                <tr>
-                    <td> Gender </td>
-
-                    <td id="gender">Male <input type="radio" name="gender" value="male"/></td>
-                    <td id="gender">Female <input type="radio" name="gender" value="female"/></td>
-                    </tr>
-                </table>
+            <div class="form-control">             
+                <label for="">Gender:</label>
+               
+                <div id="gender">
+                <label for="">Male:</label>
+                <input type="radio" name="gender" value="male" required/>
+                <label for="">Female:</label>
+                <input type="radio" name="gender" value="female" required/>
+            </div>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>Gender cannot be blank.</small>
+                
             </div>
             <div class="form-control">
-                <label for="">Date of Birth</label>
-                <input oninput="dobValid(event)" type="date" id="dob" autocomplete="off">
+                <label for="">Date of Birth:</label>
+                <input type="date" id="dob" autocomplete="off" required>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
-                <small>DOB cannot be blank.</small>
+                
             </div>
             <div class="form-control">
-                <label for="">Email ID</label>
-                <input oninput="emailValid(event)" type="Email" id="email" placeholder="example@gmail.com" autocomplete="off">
+                <label for="">Email ID:</label>
+                <input oninput="emailValid()" type="Email" id="email" placeholder="example@gmail.com" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Email Id cannot be blank.</small>
             </div>
             <div class="form-control">
-                <label for="">Mobile No.</label>
-                <input oninput="mblValid(event)" type="number" id="mobileno" placeholder="Enter your mobile no" autocomplete="off">
+                <label for="">Mobile No.:</label>
+                <input oninput="mblValid()" type="number" id="mobileno" placeholder="Enter your mobile no" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Mobile no. cannot be blank.</small>
             </div>
             <div class="form-control">
-                <label for="">Password</label>
-                <input oninput="passValid(event)" type="password" id="password" placeholder="Enter your password" autocomplete="off">
+                <label for="">Password:</label>
+                <input oninput="passValid()" type="password" id="password" placeholder="Enter your password" autocomplete="off">
                 <i class="fas fa-eye-slash" id="togglePassword"></i>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Password Cannot be blank.</small>
             </div>
             <div class="form-control">
-                <label for="">Confirm Password</label>
-                <input oninput="cfmpassValid(event)" type="password" id="cfmpassword" placeholder="Enter your password again" autocomplete="off">
+                <label for="">Confirm Password:</label>
+                <input oninput="cfmpassValid()" type="password" id="cfmpassword" placeholder="Enter your password again" autocomplete="off">
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Confirm Password Cannot be blank.</small>
             </div>
-            <input type="submit" value="Submit" class="btn">
+            <input type="submit" value="Submit" class="btn" id="btn">
         </form>
     </div>
 
