@@ -14,7 +14,7 @@
 }
 
 body{
-    background-image: var(--lg-lightcolor), url("http://6sigma.com/wp-content/uploads/2013/08/6Sigma_slideroption2.jpg");
+    background-image: var(--lg-lightcolor);
     background-size: cover;
     background-repeat:no-repeat;
     font-family: var(--myfont);
@@ -24,6 +24,8 @@ body{
     min-height: 100vh;
     width: 100vw;
     max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .container{
@@ -150,7 +152,7 @@ body{
     background: llinear-gradient(to right,#18fbd6, #3e015b);
 }
 
-@media(max-width:998px){
+@media(max-width:1200px){
     .container{
         width: calc(100vw - 35vw);
         max-width: 100%;
