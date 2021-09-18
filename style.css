@@ -89,11 +89,12 @@ body{
     align-items: center;
     width: 40%;
 }
-.form-control .fa-eye-slash{
+.form-control .bi-eye-slash{
     visibility: visible;
     right: 30px;
-    top:38px;
+    top:32px;
     position: absolute;
+    font-size: large;
 }
 .form-control.success input{
     border-color: #2ecc71;
