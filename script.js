@@ -70,13 +70,16 @@ form.addEventListener("submit",(event) =>{
         // validate Mobile number
         if(mobilenoVal === ""){
             setErrorMsg(mobileno, "Mobile Number cannot be blank.");
+            return false;
         }
         else if(mobilenoVal.length < 10){
             setErrorMsg(mobileno, "Not a valid Mobile no.");
+            return false;
         }else{
             setSuccessMsg(mobileno);
+            return true;
         }
-        return true;
+        
     }
     
     function passValid(){ 
