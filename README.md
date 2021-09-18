@@ -10,6 +10,7 @@ A Client-side form validation using JavaScript.
 There are two ways to validate form fields, one is on the submit event of the form itself, then all the fields are evaluated one by one. The other method is by binding the checkField function itself to each field, for events like Blur, Change or whatever event you wish.
 ## Main functions
 **setErrorMsg** :- setErrorMsg takes the field (element) and the error message (string). It adds the "error" class to the element which adds the error styling to the input.
+<br>
 **setSuccessMsg** :- setSuccessMsg removes the error messages and adds the "success" class to the element which adds the green tick icon to the input.
 ## Technical-Information
 To run the site on your local machine
