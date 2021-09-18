@@ -9,8 +9,8 @@
 :root{
     --myfont:'Mulish', sans-serif;
     --my-btn-font: 'Montserrat', sans-serif;
-    --lg-lightcolor: linear-gradient(to left,rgba(116,235,213,0.6), rgba(159,172,230,0));
-    --lg-color:linear-gradient(to left,#74ebd5, #9face6);
+    --lg-lightcolor: linear-gradient(to right bottom, rgb(24, 251, 214), rgb(62, 1, 91));
+    --lg-color:linear-gradient(to left,#18fbd6, #3e015b);
 }
 
 body{
@@ -42,7 +42,7 @@ body{
 }
 
 .header h2{
-    color: #222;
+    color:#fff;
     font-family: var(--my-btn-font);
     font-size: 25px;
     text-transform: uppercase;
@@ -147,7 +147,7 @@ body{
 }
 
 .form .btn:hover{
-    background: linear-gradient(to right,#74ebd5, #9face6);
+    background: llinear-gradient(to right,#18fbd6, #3e015b);
 }
 
 @media(max-width:998px){
