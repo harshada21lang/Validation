@@ -14,7 +14,6 @@ form.addEventListener("submit",(event) =>{
     event.preventDefault();
     if(usernameValid() == true && emailValid() == true && mblValid() == true && passValid() == true && cfmpassValid() == true)
     {
-        alert("Registration Successful");
         swal("Welcome! ", "Regsitration Successful" , "success");
     }
 });
